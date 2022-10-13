@@ -1,30 +1,67 @@
-import React from "react";
-import "./css/main.css";
-import ShopItemClass from "./ShopItemClass";
+import React from 'react';
+import './css/main.css';
+import Portfolio from './Portfolio';
 
-const item = {
-  brand: "Tiger of Sweden",
-  title: "Leonard coat",
-  description: "Minimalistic coat in cotton-blend",
-  descriptionFull:
-    "Men's minimalistic overcoat in cotton-blend. Features a stand-up collar, concealed front closure and single back vent. Slim fit with clean, straight shape. Above-knee length.",
-  price: 399,
-  currency: "£",
-};
+const filters = ["All", "Websites", "Flayers", "Business Cards"];
+
+const projects = [{
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
+  category: "Business Cards"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/200.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/emi_haze.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/codystretch.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_003.jpg",
+  category: "Business Cards"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290.png",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/200.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/transmission.jpg",
+  category: "Business Cards"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_1.png",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_2.png",
+  category: "Flayers"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/the_ninetys_brand.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/dia.jpg",
+  category: "Business Cards"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_350x197.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/emi_haze.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/transmission.jpg",
+  category: "Business Cards"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_350x197_1.jpg",
+  category: "Websites"
+}, {
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_3.png",
+  category: "Flayers"
+}];
 
 // Внутри компонента App
 function App() {
   return (
-    <div className='container'>
-      <div className='background-element'></div>
-      <div className='highlight-window'>
-        <div className='highlight-overlay'></div>
-      </div>
-      <div className='window'>
-        <ShopItemClass item={item} />
-      </div>
-    </div>
-  );
+    <Portfolio filters={filters} projects = {projects}/>
+  )
 }
 
 export default App;
