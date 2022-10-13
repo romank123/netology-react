@@ -1,66 +1,42 @@
-import React from 'react';
 import './css/main.css';
-import Portfolio from './Portfolio';
+import React from 'react';
+import Store from './Store';
 
-const filters = ["All", "Websites", "Flayers", "Business Cards"];
-
-const projects = [{
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
-  category: "Business Cards"
+const products = [{
+  name: "Nike Metcon 2",
+  price: "130",
+  color: "red",
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/1.jpg"
 }, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/200.jpg",
-  category: "Websites"
+  name: "Nike Metcon 2",
+  price: "130",
+  color: "green",
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/2.jpg"
 }, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/emi_haze.jpg",
-  category: "Websites"
+  name: "Nike Metcon 2",
+  price: "130",
+  color: "blue",
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/3.jpg"
 }, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/codystretch.jpg",
-  category: "Websites"
+  name: "Nike Metcon 2",
+  price: "130",
+  color: "black",
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/4.jpg"
 }, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_003.jpg",
-  category: "Business Cards"
+  name: "Nike free run",
+  price: "170",
+  color: "black",
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/7.jpg"
 }, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290.png",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/200.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/transmission.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_1.png",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_2.png",
-  category: "Flayers"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/the_ninetys_brand.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/dia.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_350x197.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/emi_haze.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/transmission.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_350x197_1.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_3.png",
-  category: "Flayers"
+  name: "Nike Metcon 3",
+  price: "150",
+  color: "green",
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/5.jpg"
 }];
 
-// Внутри компонента App
-function App() {
+function App(props) {
   return (
-    <Portfolio filters={filters} projects = {projects}/>
+    <Store products = {products}/>
   )
 }
 
