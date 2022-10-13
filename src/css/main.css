@@ -1,0 +1,42 @@
+.toolbar {
+  width: 630px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.filter {
+  border: 1px solid dimgrey;
+  margin: 5px 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: .5em;
+  font-weight: bold;
+  color: dimgray;
+}
+
+.filter.selected {
+  background-color: dimgray;
+  color: white;
+}
+
+.project-list {
+  width: 630px;
+  margin: 0 auto;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+  /* -webkit-column-rule: 1px solid transparent;
+  -moz-column-rule: 1px solid transparent;
+  column-rule: 1px solid transparent; */
+}
+
+.card {
+  width: 200px;
+  border: 1px solid lightgrey;
+  margin: 5px;
+}
