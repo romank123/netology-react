@@ -1,67 +1,20 @@
 import React from 'react';
-import './css/main.css';
-import Portfolio from './Portfolio';
+import './css/App.css';
+import Stars from './Stars';
 
-const filters = ["All", "Websites", "Flayers", "Business Cards"];
-
-const projects = [{
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/200.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/emi_haze.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/codystretch.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_003.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290.png",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/200.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/transmission.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_1.png",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_2.png",
-  category: "Flayers"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/the_ninetys_brand.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/dia.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_350x197.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/emi_haze.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/transmission.jpg",
-  category: "Business Cards"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/Triangle_350x197_1.jpg",
-  category: "Websites"
-}, {
-  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_3.png",
-  category: "Flayers"
-}];
-
-// Внутри компонента App
 function App() {
   return (
-    <Portfolio filters={filters} projects = {projects}/>
-  )
+    <div>
+      <Stars/>
+      <Stars count={0}/>
+      <Stars count={1}/>
+      <Stars count={2}/>
+      <Stars count={3}/>
+      <Stars count={4}/>
+      <Stars count={5}/>
+      <Stars count={6}/>
+    </div>
+  );
 }
 
 export default App;
