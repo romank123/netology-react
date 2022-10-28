@@ -1,10 +1,13 @@
 import React from 'react';
-import './css/App.css';
-import Listing from './Listing';
-import etsy from './data/etsy';
+import './App.css';
+import Hex2rgb from './Hex2rgb/Hex2rgb';
 
 function App() {
-  return <Listing items={etsy}/>;
+  return (
+    <div className="App">
+      <Hex2rgb/>
+    </div>
+  );
 }
 
 export default App;
