@@ -1,0 +1,14 @@
+.step-add-form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.step-add-form div {
+  flex-basis: 40%;
+}
+
+.step-add-form button {
+  flex-basis: 20%;
+}

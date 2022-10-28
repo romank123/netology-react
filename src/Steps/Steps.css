@@ -1,0 +1,7 @@
+.steps {
+  padding: .5rem;
+  width: 30rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
