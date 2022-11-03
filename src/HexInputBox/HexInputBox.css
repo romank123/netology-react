@@ -1,0 +1,11 @@
+.hex-input-box {
+  padding: .1rem;
+  height: 2rem;
+  width: 15rem;
+  margin: .3rem;
+  text-align: center;
+  font-size: large;
+  font-family: monospace;
+  background-color: whitesmoke;
+  border: .1rem solid gray;
+}
