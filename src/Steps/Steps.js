@@ -58,7 +58,7 @@ export default function Steps(props) {
     const step = steps.find((o) => o.id === id);
     setEditingStepID(step.id);
     setForm({
-      date: moment(step.date).format("DD.MM.YYYY"),
+      date: moment(step.date).format("YYYY-MM-DD"),
       distance: step.distance,
     });
   };
