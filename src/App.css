@@ -1,0 +1,62 @@
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  text-align: center;
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a.faded {
+  color: #6fa3dd;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.search-body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+.search-links a {
+  font-size: medium;
+  font-weight: bold;
+  color: #0b58b4;
+  margin-right: .5em;
+}
+
+.search-footer {
+  text-align: left;
+}
+
+.search-footer .faded {
+  color: #989898;
+}
+
+.banner {
+  height: 5rem;
+  border: 1px solid lightgrey;
+}
+
+.footer {
+
+  /* column-count: 3; */
+  /* column-gap: 1rem; */
+}

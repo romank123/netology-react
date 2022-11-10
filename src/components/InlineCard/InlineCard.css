@@ -1,0 +1,28 @@
+.inline-card a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+.inline-card .card-image {
+  height: 1em;
+  width: 1em;
+  margin-right: .2em;
+}
+
+.inline-card .card-title {
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  margin-right: .2em;
+}
+
+.inline-card .card-text {
+  font-size: medium;
+  color: black;
+  margin-right: .2em;
+}
+
+.inline-card .card-text2 {
+  color: #989898;
+}

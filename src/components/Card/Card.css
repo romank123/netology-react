@@ -1,0 +1,25 @@
+.card a {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.card .card-image {
+  height: 5.3rem;
+  width: 5.3rem;
+}
+
+.card .card-title {
+  font-size: large;
+  font-weight: bold;
+  color: #0b58b4;
+}
+
+.card .card-text {
+  color: #000000;
+}
+
+.card .card-text2 {
+  color: #989898;
+}
