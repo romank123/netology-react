@@ -1,0 +1,30 @@
+.news-header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.news {
+  flex: 1 1 auto;
+}
+
+.h3 {
+  font-size: large;
+  font-weight: bold;
+  color: #0b58b4;
+  margin-right: 1em;
+}
+
+.news-footer {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.news-footer .card {
+  margin-right: 1em;
+}
+
+.header-date {
+  font-size: small;
+  color: #989898;
+}

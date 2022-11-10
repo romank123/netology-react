@@ -1,0 +1,20 @@
+.weather-card .card-text {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.weather-pic {
+  height: 2em;
+  width: 2em;
+}
+
+.weather-temp {
+  margin: 0 1rem;
+  font-size: xx-large;
+}
+
+.weather-text {
+  font-size: small;
+  word-wrap: break-word;
+}
