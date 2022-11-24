@@ -1,0 +1,22 @@
+.add-form {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+
+.add-form div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin: 0 .5em;
+  width: 17.5em;
+}
+
+.add-form input {
+  align-self: stretch;
+}
+
+.add-form button {
+  margin: 0 .5em;
+  width: 6em;
+}
