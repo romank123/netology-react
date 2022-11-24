@@ -1,0 +1,32 @@
+.note {
+  position: relative;
+  width: 10rem;
+  margin: .5rem;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .1rem solid gray;
+  overflow-wrap: normal;
+}
+
+.note-close {
+  position: absolute;
+  top: -.7rem;
+  right: -.7rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .1rem solid gray;
+  border-radius: .7rem;
+  background-color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.note-close i {
+  font-size: 20px;
+  color: red;
+}

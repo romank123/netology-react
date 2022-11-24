@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import Watches from './components/Watches/Watches';
+import NotesContainer from './components/NotesContainer/NotesContainer';
 
 function App() {
   return (
-    <Watches items={[{ name: 'UTC', zone: 0 }]}/>
+    <div className="App">
+      <NotesContainer/>
+    </div>
   );
 }
 
