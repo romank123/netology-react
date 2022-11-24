@@ -1,9 +1,0 @@
-.search-form {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.search-input {
-  flex: 1 1 auto;
-}

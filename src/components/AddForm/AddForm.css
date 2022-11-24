@@ -1,0 +1,14 @@
+.add-form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.add-form div {
+  flex-basis: 40%;
+}
+
+.add-form button {
+  flex-basis: 20%;
+}
