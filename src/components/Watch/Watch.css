@@ -1,0 +1,55 @@
+.watch {
+  position: relative;
+  margin: .5rem;
+  height: 8rem;
+  width: 8rem;
+  border: .1rem solid gray;
+  border-radius: 4rem;
+  user-select: none;
+}
+
+.watch-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1.15rem;
+  text-align: center;
+  height: 1.15rem;
+  width: 1.15rem;
+  border: .1rem solid gray;
+  border-radius: .7rem;
+  cursor: pointer;
+}
+
+.watch-hour,
+.watch-minute {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  line-height: 3rem;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.watch-name {
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.watch-time {
+  position: absolute;
+  top: 60%;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0 0 .25em white;
+  font-weight: bold;
+  z-index: 99;
+}
