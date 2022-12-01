@@ -1,83 +1,117 @@
-import React, { useState } from "react";
-import moment from "moment";
-import "moment/locale/ru";
-import "./css/index.css";
+import React, { useState, Component } from "react";
+import './css/index.css';
 
-moment.locale("ru");
-
-function DateTime(props) {
-  return <p className='date'>{props.date}</p>;
-}
-
-function prettifyDateTime(date) {
-  const mDate = moment(date, "YYYY-MM-DD HH:mm:ss");
-  const difference = moment().diff(mDate);
-  if (difference < 3600000)
-    return `${moment().diff(mDate, "minutes")} минут назад`;
-  if (difference < 86400000)
-    return `${moment().diff(mDate, "hours")} часов назад`;
-  return `${moment().diff(mDate, "days")} дней назад`;
-}
-
-const withPrettyDateTime = (date) => (Component) =>
-  class extends React.Component {
-    render() {
-      const prettyDate =
-        typeof date === "function" ? date(this.props.date) : date;
-      return <Component {...this.props} date={prettyDate} />;
-    }
-  };
-
-const DateTimePretty = withPrettyDateTime(prettifyDateTime)(DateTime);
-
-function Video(props) {
+function New(props) {
   return (
-    <div className='video'>
-      <iframe
-        src={props.url}
-        frameBorder='0'
-        allow='autoplay; encrypted-media'
-        allowFullScreen
-        title={"props.url"}
-      ></iframe>
-      <DateTimePretty date={props.date} />
+    <div className="wrap-item wrap-item-new">
+      <span className="label">New!</span>
+      {props.children}
     </div>
   );
 }
 
-function VideoList(props) {
-  return props.list.map((item, index) => (
-    <Video url={item.url} date={item.date} key={index} />
-  ));
+function Popular(props) {
+  return (
+    <div className="wrap-item wrap-item-popular">
+      <span className="label">Popular!</span>
+      {props.children}
+    </div>
+  );
+}
+
+function Article(props) {
+  return (
+    <div className="item item-article">
+      <h3>
+        <a href="#">{props.title}</a>
+      </h3>
+      <p className="views">Прочтений: {props.views}</p>
+    </div>
+  );
+}
+
+function Video(props) {
+  return (
+    <div className="item item-video">
+      <iframe
+        src={props.url}
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        title={props.url}
+      ></iframe>
+      <p className="views">Просмотров: {props.views}</p>
+    </div>
+  );
+}
+
+function highlight({ views }) {
+  if (views < 100) return New;
+  if (views >= 1000) return Popular;
+  return null;
+}
+
+const withHighlight = (highlight) => (Component) => class extends React.Component {
+  render() {
+    const HighlightedComponent = (typeof highlight === 'function') ? highlight(this.props) : highlight;
+    if (HighlightedComponent) {
+      return <HighlightedComponent><Component {...this.props}/></HighlightedComponent>
+    }
+    return <Component {...this.props}/>
+  }
+}
+
+const HighlightedVideo = withHighlight(highlight)(Video);
+const HighlightedArticle = withHighlight(highlight)(Article);
+
+function List(props) {
+  return props.list.map((item, index) => {
+    switch (item.type) {
+      case "video":
+        return <HighlightedVideo {...item} key={index}/>;
+
+      case "article":
+        return <HighlightedArticle {...item} key={index}/>;
+    }
+  });
 }
 
 export default function App() {
   const [list, setList] = useState([
     {
-      url: "https://www.youtube.com/embed/rN6nlNC9WQA?rel=0&amp;controls=0&amp;showinfo=0",
-      date: "2022-12-01 13:24:00",
+      type: "video",
+      url:
+        "https://www.youtube.com/embed/rN6nlNC9WQA?rel=0&amp;controls=0&amp;showinfo=0",
+      views: 50,
     },
     {
-      url: "https://www.youtube.com/embed/dVkK36KOcqs?rel=0&amp;controls=0&amp;showinfo=0",
-      date: "2022-11-20 12:10:00",
+      type: "video",
+      url:
+        "https://www.youtube.com/embed/dVkK36KOcqs?rel=0&amp;controls=0&amp;showinfo=0",
+      views: 12,
     },
     {
-      url: "https://www.youtube.com/embed/xGRjCa49C6U?rel=0&amp;controls=0&amp;showinfo=0",
-      date: "2022-10-03 23:16:00",
+      type: "article",
+      title: "Невероятные события в неизвестном поселке...",
+      views: 175,
     },
     {
-      url: "https://www.youtube.com/embed/RK1K2bCg4J8?rel=0&amp;controls=0&amp;showinfo=0",
-      date: "2018-01-03 12:10:00",
+      type: "article",
+      title: "Секретные данные были раскрыты!",
+      views: 1532,
     },
     {
-      url: "https://www.youtube.com/embed/TKmGU77INaM?rel=0&amp;controls=0&amp;showinfo=0",
-      date: "2018-01-01 16:17:00",
+      type: "video",
+      url:
+        "https://www.youtube.com/embed/TKmGU77INaM?rel=0&amp;controls=0&amp;showinfo=0",
+      views: 4253,
     },
     {
-      url: "https://www.youtube.com/embed/TxbE79-1OSI?rel=0&amp;controls=0&amp;showinfo=0",
-      date: "2017-12-02 05:24:00",
+      type: "article",
+      title: "Кот Бегемот обладает невероятной...",
+      views: 12,
     },
   ]);
 
-  return <VideoList list={list} />;
+  return <List list={list} />;
 }
