@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
-import List from './components/List/List';
+import React from 'react';
 import './App.css';
+
 import useJsonFetch from './hooks/useJsonFetch';
-import Details from './components/Details/Details';
 
-function App() {
-  const [users, setUsers] = useState([]);
-  const [selectedUserID, setSelectedUserID] = useState(null);
-
-  const [{ data, loading }] = useJsonFetch(`${process.env.REACT_APP_USERS_URL}/users.json`);
-  if (data && (JSON.stringify(users) !== JSON.stringify(data))) setUsers(data);
-
+function AppHook ({ url }) {
+  const[data, isLoading, hasError] = useJsonFetch(url)
   return (
-    <div className='App'>
-      { loading && <div>{'Loading...'}</div> }
-      <List
-        items={users}
-        selectedID={selectedUserID}
-        onClick={(id) => setSelectedUserID(id)}
-      />
-      { selectedUserID && <Details info={users.find((o) => o.id === selectedUserID)}/> }
+    <div className="App">
+      <h1>{data && data.status}</h1>
+      <h1>{isLoading && 'Is Loading'}</h1>
+      <h1>{hasError && 'Has Error'}</h1>
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (<div>
+    <AppHook url={process.env.REACT_APP_DATA_URL} />
+    <hr />
+    <AppHook url={process.env.REACT_APP_ERROR_URL} />
+    <hr />
+    <AppHook url={process.env.REACT_APP_LOADING_URL} />
+    <hr />
+  </div>)
+}
