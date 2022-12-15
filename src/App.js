@@ -1,26 +1,24 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Menu from './components/Menu/Menu';
+import HomePage from './pages/HomePage/HomePage';
+import DriftPage from './pages/DriftPage/DriftPage';
+import TimeAttackPage from './pages/TimeAttackPage/TimeAttackPage';
+import ForzaPage from './pages/ForzaPage/ForzaPage';
 import './App.css';
 
-import useJsonFetch from './hooks/useJsonFetch';
-
-function AppHook ({ url }) {
-  const[data, isLoading, hasError] = useJsonFetch(url)
-  return (
-    <div className="App">
-      <h1>{data && data.status}</h1>
-      <h1>{isLoading && 'Is Loading'}</h1>
-      <h1>{hasError && 'Has Error'}</h1>
-    </div>
-  );
-}
-
 export default function App() {
-  return (<div>
-    <AppHook url={process.env.REACT_APP_DATA_URL} />
-    <hr />
-    <AppHook url={process.env.REACT_APP_ERROR_URL} />
-    <hr />
-    <AppHook url={process.env.REACT_APP_LOADING_URL} />
-    <hr />
-  </div>)
+  return (
+    <Router>
+      <div>
+        <Menu />
+        <div className="page">
+          <Route path="/" exact component={HomePage} />
+          <Route path="/drift" component={DriftPage} />
+          <Route path="/timeattack" component={TimeAttackPage} />
+          <Route path="/forza" component={ForzaPage} />
+        </div>
+      </div>
+    </Router>
+  );
 }
