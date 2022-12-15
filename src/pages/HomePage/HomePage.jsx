@@ -1,25 +1,21 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
+import PostsContext from '../../contexts/PostsContext';
+import { Link } from 'react-router-dom';
+import Card from '../../components/Card/Card';
+import './HomePage.css';
 
-function HomePage() {
+export default function HomePage({ history }) {
+  const { posts, loading } = useContext(PostsContext);
+
   return (
-    <article className="article">
-      <h1 className="article__title">Гоночн​ое такси</h1>
-      <p className="article__paragraph">
-        Гоночн​ое такси – отличная возможность насладиться скоростью и мастерством гонщика,
-        сидя на месте штурмана, и стать свидетелем настоящего мастерства профессиональных
-        инструкторов Сочи Автодрома, в полной мере ощутив крутые виражи на самой современной
-        гоночной трассе России.
-      </p>
-    </article>
+    <div className='home'>
+      <button className='new-post-btn'>
+        <Link to='/posts/new'>{'Создать пост'}</Link>
+      </button>
+      <div className='body'>
+        { loading && <div>{'Loading...'}</div> }
+        { posts.map((o) => <Card data={o} key={o.id} onClick={() => history.push(`/posts/${o.id}`)} />) }
+      </div>
+    </div>
   )
 }
-
-// HomePage.propTypes = {
-
-// }
-
-export default HomePage
-
-
-
