@@ -4,7 +4,7 @@ import image from './assets/003-image.svg';
 
 export function PostForm(props) {
     return(
-       <form className="text-form" onSubmit={props.onSubmit}>
+       <form className="text-form" onSubmit={props.onSubmit}>       
         <div className="text-form__box">
           <img className="text-form__author" src={image} alt=""/>
           <textarea id={props.name}

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { PostsContext } from './PostsContext';
 import { prettyDate } from './PrettyDate';
 import PropTypes from 'prop-types';
 import image from './assets/003-image.svg';
 
 export function Post(props){
+  let history = useHistory();
   let { id } = useParams();
   const { posts } = useContext(PostsContext);
 
@@ -17,10 +18,21 @@ export function Post(props){
     }
   }
 
+  const onClose = (e) => {
+    e.preventDefault();
+    history.goBack();
+  }
+
   const date = prettyDate(findPost().created);
 
   return(
      <div className="post" onClick={props.onClick}>
+      <button className="close close_edit" onClick={onClose}>
+         <span className="material-icons">
+          close
+         </span>
+       </button>
+      <h4 className="edit-post__header">Редактировать публикацию</h4>
        <div className="post__header">
          <img className="author__avatar" src={image} alt="#"/>
          <div>

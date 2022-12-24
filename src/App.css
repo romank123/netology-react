@@ -29,6 +29,13 @@ a{
   border-radius:4px;
 }
 
+.background .edit-post__header {
+  display: none;
+}
+.background .close_edit {
+  display: none;
+}
+
 .add-panel{
   background:#fff;
   display:flex;
