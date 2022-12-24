@@ -39,9 +39,10 @@ export function EditPost() {
     })
     .finally(() => {
       fetchPosts();
-      history.goBack();
+      history.replace("/");
+      // history.goBack();
+      console.log('back')
     })
-
   }
 
   const onClose = (e) => {
@@ -63,11 +64,11 @@ export function EditPost() {
                  onChange={onChange}
                  onSubmit={onSaveChanges}>
          <ul className="edit-post__options">
-           <li><img className="icon" src={image} /> Фото/видео</li>
-           <li><img className="icon" src={smile}/> Чувства/действия</li>
-           <li><img className="icon" src={gif} /> GIF</li>
-           <li><img className="icon" src={tag} /> Отметить друзей</li>
-           <li><img className="icon" src={geo} /> Отметить посещение</li>
+           <li><img className="icon" src={image} alt="#" /> Фото/видео</li>
+           <li><img className="icon" src={smile}  alt="#"/> Чувства/действия</li>
+           <li><img className="icon" src={gif}  alt="#"/> GIF</li>
+           <li><img className="icon" src={tag}  alt="#"/> Отметить друзей</li>
+           <li><img className="icon" src={geo}  alt="#" /> Отметить посещение</li>
          </ul>
        </PostForm>
      </div>

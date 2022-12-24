@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { PostsContext } from './PostsContext';
 import { prettyDate } from './PrettyDate';
 import PropTypes from 'prop-types';
+import image from './assets/003-image.svg';
 
 export function Post(props){
   let { id } = useParams();
@@ -21,7 +22,7 @@ export function Post(props){
   return(
      <div className="post" onClick={props.onClick}>
        <div className="post__header">
-         <img className="author__avatar" src="" />
+         <img className="author__avatar" src={image} alt="#"/>
          <div>
            <h5 className="author__name">Ilnaz Gilyazov</h5>
              <span className="author__title">
@@ -34,13 +35,13 @@ export function Post(props){
          <p className="post__text">{findPost().content}</p>
        </div>
        <div className="post__reactions">
-         <a href="#" className="post__reaction">
+         <a href="/" className="post__reaction">
            <span className="material-icons">
              thumb_up
            </span>
            <span>Нравится</span>
          </a>
-         <a href="#" className="post__reaction">
+         <a href="/" className="post__reaction">
            <span className="material-icons">
              mode_comment
            </span>
