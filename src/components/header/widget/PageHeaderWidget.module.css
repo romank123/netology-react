@@ -1,0 +1,21 @@
+.pics {
+  display: flex;
+  justify-content: space-between;
+  max-width: 280px;
+  margin-left: auto;
+}
+
+.pic {
+  height: 32px;
+  width: 32px;
+  margin: 0 10px;
+  background-image: url(../../../img/header-controls-sprite.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  z-index: 1;
+  background-position: -64px 0;
+}

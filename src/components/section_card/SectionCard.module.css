@@ -1,0 +1,14 @@
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;  
+} 
+
+.catalog-item-card {
+  margin-bottom: 1em;
+}

@@ -1,0 +1,85 @@
+.footer {
+  padding: 0 25px;
+}
+
+.pay {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px auto 0;
+}
+
+.pay-systems {
+  width: 46px;
+  height: 28px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-image: url(../../img/footer-sprite.png);
+}
+
+.pay-systems:not(:first-child) {
+  margin-left: 5px;
+}
+
+.paypal {
+  background-position: -2px -6px;
+}
+
+.master-card {
+  background-position: -54px -8px;
+}
+
+.visa {
+  background-position: -104px -8px;
+}
+
+.yandex {
+  background-position: -154px -8px;
+}
+
+.webmoney {
+  background-position: -2px -46px;
+}
+
+.qiwi {
+  background-position: -52px -46px;
+}
+
+.socials {
+  margin-top: 10px;
+}
+
+.social {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-image: url(../../img/footer-sprite.png);
+}
+
+.twitter {
+  background-position: -107px -42px;
+}
+
+.vk {
+  background-position: -157px -42px;
+}
+
+.social:hover {
+  cursor: pointer;
+}
+
+.copyright {
+  font-size: 0.8em;
+}
+
+.phone {
+  display: block;
+}
+
+.email {
+  display: block;
+}

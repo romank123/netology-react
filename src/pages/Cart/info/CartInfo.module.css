@@ -1,0 +1,19 @@
+.order .card {
+  max-width: 30rem;
+  margin: 0 auto;
+} 
+
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;  
+} 
+
+.input {
+  width: 100%;
+}
