@@ -1,0 +1,10 @@
+.size {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.size.selected {
+  background: #727e86;
+  border-radius: 15px;
+  color: #fff;
+}
